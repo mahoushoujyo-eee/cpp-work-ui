@@ -133,7 +133,17 @@
           
           <!-- Cuboid -->
           <template v-else-if="formData.type === 'Cuboid'">
-            <div class="grid grid-cols-3 gap-4">
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <label for="length" class="form-label">长度</label>
+                <input
+                  id="length"
+                  v-model.number="formData.properties.length"
+                  type="number"
+                  min="1"
+                  class="form-input"
+                />
+              </div>
               <div>
                 <label for="width" class="form-label">宽度</label>
                 <input
@@ -144,6 +154,8 @@
                   class="form-input"
                 />
               </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
               <div>
                 <label for="height" class="form-label">高度</label>
                 <input
@@ -154,16 +166,7 @@
                   class="form-input"
                 />
               </div>
-              <div>
-                <label for="depth" class="form-label">深度</label>
-                <input
-                  id="depth"
-                  v-model.number="formData.properties.depth"
-                  type="number"
-                  min="1"
-                  class="form-input"
-                />
-              </div>
+
             </div>
           </template>
           
@@ -264,6 +267,22 @@ const formData = ref({
 const handleTypeChange = () => {
   const defaultProps = shapeStore.getDefaultPropertiesForType(formData.value.type);
   formData.value.properties = defaultProps || {};
+  
+  // 确保立方体有length属性
+  if (formData.value.type === 'Cuboid' && !formData.value.properties.length) {
+    formData.value.properties.length = formData.value.properties.width || 100;
+  }
+};
+
+// 同步length和width属性
+const syncWidthLength = (source) => {
+  if (formData.value.type === 'Cuboid') {
+    if (source === 'length') {
+      formData.value.properties.width = formData.value.properties.length;
+    } else if (source === 'width') {
+      formData.value.properties.length = formData.value.properties.width;
+    }
+  }
 };
 
 // On mount, initialize data

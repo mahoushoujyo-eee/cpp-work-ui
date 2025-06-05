@@ -158,7 +158,7 @@ const propertyTranslations = {
   'width': '宽度',
   'height': '高度',
   'radius': '半径',
-  'depth': '深度'
+  'length': '长度'
 };
 
 const typeClass = computed(() => {

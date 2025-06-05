@@ -14,9 +14,9 @@ const shapeTypes = {
     radius: 50,
   },
   Cuboid: {
+    length: 100,
     width: 100,
     height: 50,
-    depth: 75,
   },
   Cylinder: {
     radius: 50,
@@ -69,8 +69,8 @@ export const useShapeStore = defineStore('shapes', () => {
         return 'width' in shape.properties;
       case 'hasHeight':
         return 'height' in shape.properties;
-      case 'hasDepth':
-        return 'depth' in shape.properties;
+      case 'hasLength':
+        return 'length' in shape.properties;
       default:
         return true;
     }
@@ -125,9 +125,9 @@ export const useShapeStore = defineStore('shapes', () => {
         break;
       case 'Cuboid':
         frontendShape.properties = {
-          width: backendShape.width || 100,
+          width: backendShape.width || backendShape.length || 100,
           height: backendShape.height || 50,
-          depth: backendShape.depth || 75
+          length: backendShape.length || backendShape.width || 100
         };
         break;
       case 'Cylinder':

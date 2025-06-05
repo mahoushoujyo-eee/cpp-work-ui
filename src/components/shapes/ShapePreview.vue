@@ -109,7 +109,7 @@ const createShape = () => {
       geometry = new THREE.BoxGeometry(
         getValidNumber(properties.width, 50) / 50,
         getValidNumber(properties.height, 50) / 50,
-        getValidNumber(properties.depth, 50) / 50
+        getValidNumber(properties.length, 50) / 50
       );
       break;
     case 'Cylinder':
