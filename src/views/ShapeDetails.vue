@@ -186,7 +186,7 @@ const confirmDelete = async () => {
       }
     );
     await shapeStore.deleteShape(shape.value.id);
-    router.push('/');
+    router.push('/home');
   } catch {
     // 用户取消删除
   }

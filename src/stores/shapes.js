@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 
-// API配置
-const API_BASE_URL = 'http://localhost:58010';
+// API配置 - 从环境变量中获取API基础URL
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:58010';
 
 // Shape types and their properties
 const shapeTypes = {

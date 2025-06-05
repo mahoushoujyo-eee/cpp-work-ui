@@ -153,6 +153,98 @@
       </div>
     </div>
 
+    <!-- C++技术亮点 -->
+    <div class="card mb-8">
+      <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">后端C++技术亮点</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- 智能指针 -->
+        <div class="bg-gray-50 dark:bg-gray-700 p-5 rounded-lg">
+          <div class="flex items-center mb-3">
+            <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 dark:text-white">智能指针</h4>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300 mb-3">
+            项目中广泛使用C++11引入的智能指针（std::shared_ptr, std::unique_ptr）进行内存管理，有效避免内存泄漏问题。
+          </p>
+          <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded text-sm font-mono overflow-x-auto">
+            <code class="text-gray-800 dark:text-gray-200">
+              std::unique_ptr&lt;Shape&gt; shape = std::make_unique&lt;Rectangle&gt;(...);<br>
+              std::shared_ptr&lt;DataManager&gt; dataManager = std::make_shared&lt;JsonDataManager&gt;(...);
+            </code>
+          </div>
+        </div>
+
+        <!-- 泛型编程 -->
+        <div class="bg-gray-50 dark:bg-gray-700 p-5 rounded-lg">
+          <div class="flex items-center mb-3">
+            <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 dark:text-white">泛型编程</h4>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300 mb-3">
+            利用模板和STL容器实现了高度可复用的代码，提高了系统的扩展性和维护性。
+          </p>
+          <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded text-sm font-mono overflow-x-auto">
+            <code class="text-gray-800 dark:text-gray-200">
+              template&lt;typename T&gt;<br>
+              std::vector&lt;T&gt; filterByProperty(const std::vector&lt;T&gt;& items, const std::function&lt;bool(const T&)&gt;& predicate) {...}
+            </code>
+          </div>
+        </div>
+
+        <!-- Lambda表达式 -->
+        <div class="bg-gray-50 dark:bg-gray-700 p-5 rounded-lg">
+          <div class="flex items-center mb-3">
+            <div class="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+              </svg>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 dark:text-white">Lambda表达式</h4>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300 mb-3">
+            使用Lambda表达式简化了回调函数和事件处理逻辑，提高了代码的可读性和简洁性。
+          </p>
+          <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded text-sm font-mono overflow-x-auto">
+            <code class="text-gray-800 dark:text-gray-200">
+              std::sort(shapes.begin(), shapes.end(), [](const auto& a, const auto& b) {<br>
+              &nbsp;&nbsp;return a->getName() < b->getName();<br>
+              });
+            </code>
+          </div>
+        </div>
+
+        <!-- 多线程与并发 -->
+        <div class="bg-gray-50 dark:bg-gray-700 p-5 rounded-lg">
+          <div class="flex items-center mb-3">
+            <div class="w-10 h-10 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-600 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 dark:text-white">多线程与并发</h4>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300 mb-3">
+            利用std::thread、std::mutex和std::async等现代C++并发工具，实现了高效的并发处理和资源同步。
+          </p>
+          <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded text-sm font-mono overflow-x-auto">
+            <code class="text-gray-800 dark:text-gray-200">
+              std::mutex mtx;<br>
+              std::lock_guard&lt;std::mutex&gt; lock(mtx);<br>
+              auto future = std::async(std::launch::async, &DataService::processData, this, data);
+            </code>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- 功能体验区域 -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
       <!-- 快速开始 -->
